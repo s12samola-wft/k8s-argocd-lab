@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nginx-practice
+  namespace: argocd-practice
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: nginx-practice
+
+  template:
+    metadata:
+      labels:
+        app: nginx-practice
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27
+          ports:
+            - containerPort: 80
+
+          env:
+            - name: APP_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: practice-config
+                  key: APP_ENV
+
+            - name: APP_MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: practice-config
+                  key: APP_MESSAGE
