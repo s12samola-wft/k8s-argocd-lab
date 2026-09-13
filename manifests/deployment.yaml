@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: nginx-practice
-  namespace: argocd-practice
+  namespace: s12samola
 
 spec:
   replicas: 4

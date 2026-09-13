@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: practice-config
-  namespace: argocd-practice
+  namespace: s12samola
 data:
   APP_ENV: "practice"
   APP_MESSAGE: "Hello from Argo CD"

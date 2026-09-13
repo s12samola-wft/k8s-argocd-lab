@@ -3,7 +3,7 @@ kind: Service
 
 metadata:
   name: nginx-practice-service
-  namespace: argocd-practice
+  namespace: s12samola
 
 spec:
   selector:
